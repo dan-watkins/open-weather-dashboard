@@ -2,11 +2,16 @@ $(function () {
   const apiKey = "5ec3f4bc98430f28dafcf83dc1eaacc4";
 
   function saveSearch(city) {
-    var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+    var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
     if (searchHistory.indexOf(city) === -1) {
       searchHistory.push(city);
       localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     }
+  }
+
+  var loadSearch = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  for (var i = 0; i < loadSearch.length; i++) {
+    $("#search-history").append("<li>" + loadSearch[i] + "</li>");
   }
 
   function displayWeather(response) {
@@ -65,6 +70,17 @@ $(function () {
 
   $("#search-button").on("click", function () {
     var city = $("#search-bar").val().trim();
+    saveSearch(city);
     getWeather(city);
   });
+});
+
+var deleteBtn = $("<button>");
+deleteBtn.addClass("delete-btn");
+deleteBtn.text("Remove");
+$("#search-history").append(deleteBtn);
+
+$(".delete-btn").on("click", function () {
+  localStorage.clear();
+  location.reload();
 });
