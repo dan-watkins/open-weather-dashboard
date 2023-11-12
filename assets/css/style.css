@@ -1,0 +1,85 @@
+   header {
+    background: steelblue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-left: -2em;
+    margin-right: -2em;
+  }
+  
+  .search {
+    display: inline-block;
+    justify-content: center;
+  }
+
+  main {
+    grid-area: main;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+  .today-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+  }
+  
+  .forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* set forecast container to be a flex container with a row layout */
+  .forecast-day {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+  }
+
+  .history h2 {
+    margin-left: 1.5em;
+  }
+  
+  #search-history li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    margin-left: 0.75em;
+    margin-right: 3.5em;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+  }
+  
+  .delete-btn {
+    border-radius: 5px;
+    margin-left: 1em;
+    color: white;
+    background-color: lightcoral;
+    margin-bottom: 1em;
+  }
+
+  #search-button {
+    border-radius: 5px;
+    color: white;
+    background-color: #00BFFF;
+  }
+  
